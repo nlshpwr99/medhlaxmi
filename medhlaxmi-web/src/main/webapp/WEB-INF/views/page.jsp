@@ -31,29 +31,12 @@
 	
 </script>
 
-<%-- <link href="${css}/bootstrap.min.css" rel="stylesheet">
+<link href="${css}/bootstrap.min.css" rel="stylesheet">
 <link href="${css}/bootstrap-readable-theme.css" rel="stylesheet">
 <link href="${css}/dataTables.bootstrap.css" rel="stylesheet">
-<link href="${css}/myapp.css" rel="stylesheet"> --%>
+<link href="${css}/myapp.css" rel="stylesheet">
 
-
-<!-- admin css -->
-
-<%-- <link href="${adcss}/bootstrap_dist/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="${adcss}/font-awesome/css/font-awesome.min.css">
-  <link rel="stylesheet" href="${adcss}/Ionicons/css/ionicons.min.css">
-  <link rel="stylesheet" href="${adcss}/jvectormap/jquery-jvectormap.css"> 
-  <link rel="stylesheet" href="${adcss}/dist/css/AdminLTE.min.css">
-  <link rel="stylesheet" href="${adcss}/dist/css/skins/_all-skins.min.css">
-  <link rel="stylesheet" href="${adcss}/datatables.net-bs/css/dataTables.bootstrap.min.css">
-  
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-  <link rel="stylesheet" href="${adcss}/morris.js/morris.css">
-  <link rel="stylesheet" href="${adcss}/jvectormap/jquery-jvectormap.css">
-  <link rel="stylesheet" href="${adcss}/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
-  <link rel="stylesheet" href="${adcss}/bootstrap-daterangepicker/daterangepicker.css">
-  <link rel="stylesheet" href="${adcss}/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css"> --%>
-  <%@include file="css.jsp"%>
+<%--   <%@include file="css.jsp"%> --%>
 </head>
 
 <body>
@@ -66,56 +49,76 @@
 
 		<!-- Page Content -->
 
-		<div class="bodyContainer">
+		<!-- <div class="bodyContainer"> -->
 			
 			<!-- Loading the home content -->
 			<c:if test="${userClickHome == true }">
+			<%@include file="./shared/navbar.jsp"%>
+		        <div class="bodyContainer">
 				<%@include file="home.jsp"%>
+				</div>
 			</c:if>
 
 			<!-- Load only when user clicks about -->
 			<c:if test="${userClickAbout == true }">
+			<%@include file="./shared/navbar.jsp"%>
+		        <div class="bodyContainer">
 				<%@include file="about.jsp"%>
+				</div>
 			</c:if>
 
 			<!-- Load only when user clicks contact -->
 			<c:if test="${userClickContact == true }">
+			<%@include file="./shared/navbar.jsp"%>
+		        <div class="bodyContainer">
 				<%@include file="contact.jsp"%>
+				</div>
 			</c:if>
 			
 			<!-- Load only when user clicks contact -->
 			<c:if test="${userClickAllProducts == true or userClickCategoryProducts == true }">
+			<%@include file="./shared/navbar.jsp"%>
+		        <div class="bodyContainer">
 				<%@include file="listProducts.jsp"%>
+				</div>
 			</c:if>	
 			
 			
 			<!-- Load only when user clicks show product -->
 			<c:if test="${userClickShowProduct == true}">
+			<%@include file="./shared/navbar.jsp"%>
+		        <div class="bodyContainer">
 				<%@include file="singleProduct.jsp"%>
+				</div>
 			</c:if>								
 
 			<!-- Load only when user clicks manage product -->
 			<c:if test="${userClickManageProduct == true}">
+		        <div class="bodyContainer">
 				<%@include file="manageProduct.jsp"%>
+				</div>
 			</c:if>	
 
 			<!-- Load only when user clicks manage product -->
 			<c:if test="${userClickShowCart == true}">
+			<%@include file="./shared/navbar.jsp"%>
+		        <div class="bodyContainer">
 				<%@include file="cart.jsp"%>
+				</div>
 			</c:if>	
 
-		</div>
+		<!-- </div> -->
 
 
 		<!-- Footer comes here -->
-		<%-- <%@include file="./shared/footer.jsp"%> --%>
+		<%@include file="./shared/footer.jsp"%>
 
-		<%-- <script src="${js}/jquery.js"></script>
+		<script src="${js}/jquery.js"></script>
 		<script src="${js}/jquery.validate.js"></script>
 		<script src="${js}/bootstrap.min.js"></script>
 		<script src="${js}/jquery.dataTables.js"></script>
 		<script src="${js}/dataTables.bootstrap.js"></script>
-		<script src="${js}/bootbox.min.js"></script> --%>
+		<script src="${js}/bootbox.min.js"></script>
 		<script src="${js}/myapp.js"></script>
 
 	</div>
